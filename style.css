@@ -121,27 +121,38 @@ nav ul li a:hover::after {
   color: #ccc;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  min-width: 220px;
-}
-
-.btn-outline {
-  display: inline-block;
+/* Shared button base style */
+.hero-buttons .btn,
+.hero-buttons .btn-outline {
   padding: 14px 32px;
-  border: 1px solid #19ad39;
-  color: #fff;
   border-radius: 6px;
+  font-size: 16px;
   text-decoration: none;
-  min-width: 220px;
+  min-width: 220px;  /* Make both buttons the same width */
+  text-align: center;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 
-.btn-outline:hover {
+/* Filled button */
+.hero-buttons .btn {
+  background: #19ad39;
+  color: #fff;
+  border: 1px solid #19ad39;
+}
+
+/* Outline button */
+.hero-buttons .btn-outline {
+  border: 1px solid #19ad39;
+  background: transparent;
+  color: #fff;
+}
+
+.hero-buttons .btn-outline:hover {
   background: #19ad39;
   color: #fff;
 }
+
 
 .hero-right {
   flex-basis: 40%;
