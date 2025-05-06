@@ -93,6 +93,67 @@ nav ul li a:hover::after {
     height: 10%;
     object-fit: cover;
 }
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 0 60px 0;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex-basis: 50%;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-left h1 span {
+  color: #19ad39;
+}
+
+.hero-left p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  min-width: 220px;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid #19ad39;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  min-width: 220px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #19ad39;
+  color: #fff;
+}
+
+.hero-right {
+  flex-basis: 40%;
+  text-align: center;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 4000px;
+  height: 500px;
+}
+
 /* ----------about------------ */
 #about {
     padding: 80px;

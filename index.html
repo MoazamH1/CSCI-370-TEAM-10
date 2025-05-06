@@ -9,25 +9,38 @@
     </head>
 
     <body>
-        <div id="header">
-            <div class="container">
-                <nav>
-                    <img src="images/logo.png" class="logo" />
-                    <ul id="sidemenu">
-                        <li><a href="#header"> Home</a></li>
-                        <li><a href="#about"> About</a></li>
-                        <li><a href="#services"> Services</a></li>
-                        <li><a href="#contact"> Contact</a></li>
-                        <i class="fa-solid fa-square-xmark=" onclick="closemenu()"></i>
-                    </ul>
-                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-                </nav>
+      <div id="header">
+        <div class="container">
+          <nav>
+            <img src="images/logo.png" class="logo" />
+            <ul id="sidemenu">
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+          </nav>
+      
+          <div class="hero-content">
+            <div class="hero-left">
+              <h1>Know Your Risk.<br />Take Control of <span>Your Health.</span></h1>
+              <p>
+                DiabeXpert helps you assess your diabetes risk and get personalized insights —
+              </p>
+              <div class="hero-buttons">
+                <a href="#portfolio" class="btn">Get My Risk Score</a>
+                <a href="#services" class="btn-outline">See How It Works</a>
+              </div>
             </div>
-            <div class="header-text">
-              <p>DiabeXpert</p>
-              <h1>Know Your Risk. Take Control.</h1>
+            <div class="hero-right">
+              <img src="images/doc.jpg" alt="Doctor UI Illustration" />
+            </div>
           </div>
         </div>
+      </div>
+      
 
         <div id="about">
           <div class="container">
@@ -36,13 +49,17 @@
                   <div class="about-col-2">
                       <h1 class="sub-title">Behind the Dev Team</h1>
                       <div class="tab-titles">
-                          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                          <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                          <p class="tab-links" onclick="opentab('education')">Education</p>
+                          <p class="tab-links active-link" onclick="opentab('skills')">Moazam Hussain</p>
+                          <p class="tab-links" onclick="opentab('experience')">Ummrin Myesha</p>
+                          <p class="tab-links" onclick="opentab('education')">Gaggandeep Singh</p>
                       </div>
                       <div class="tab-contents active-tab" id="skills">
                           <ul>
-                              <li><span>Languages</span><br />• Java • HTML • CSS • JavaScript</li>
+                              <li><span>Languages</span>
+                                <br>• Java 
+                                <br>• HTML 
+                                <br>• CSS 
+                                <br>• JavaScript</li>
                           </ul>
                       </div>
                   </div>
@@ -246,13 +263,13 @@
       container.classList.remove("low-risk", "moderate-risk", "high-risk", "critical-risk");
 
       // Update bar and card background class
-      if (risk < 0.33) {
+      if (risk < 0.25) {
         bar.style.background = "linear-gradient(to right, #2ecc71, #2ecc71)";
         container.classList.add("low-risk");
-      } else if (risk < 0.66) {
+      } else if (risk < 0.50) {
         bar.style.background = "linear-gradient(to right, #f1c40f, #f1c40f)";
         container.classList.add("moderate-risk");
-      } else if (risk < 0.85) {
+      } else if (risk < 0.75) {
         bar.style.background = "linear-gradient(to right, #e67e22, #e67e22)";
         container.classList.add("high-risk");
       } else {
