@@ -370,13 +370,21 @@ nav ul li a:hover::after {
     background: #19ad39;
   }
   /* Survey card hover like severity scale */
-.severity-container.survey-card:hover {
+  .survey-container {
+  background: #262626;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  transition: background 0.5s, transform 0.5s;
+}
+.survey-container.survey-card:hover {
   background: linear-gradient(to right, #19ad39, #c6db0a, #c06504, #db0e0a); /* blue to purple gradient */
-  transform: translateY(-10px);
+  transform: translateY(0px);
 }
 
-.severity-container.survey-card:hover h3,
-.severity-container.survey-card:hover p {
+.survey-container.survey-card:hover h3,
+.survey-container.survey-card:hover p {
   color: #fff;
 }
  /* ---------- Severity Scale ---------- */
