@@ -12,7 +12,7 @@
       <div id="header">
         <div class="container">
           <nav>
-            <img src="images/logo.png" class="logo" />
+            <img src="images/darklogo.png" class="logo" />
             <ul id="sidemenu">
               <li><a href="#header">Home</a></li>
               <li><a href="#about">About</a></li>
@@ -47,7 +47,8 @@
               <div class="row">
                   <div class="about-col-1"></div>
                   <div class="about-col-2">
-                      <h1 class="sub-title">Behind the Dev Team</h1>
+                    <div class="section-divider"></div>
+                    <br></br><h1 class="sub-title">Behind the Dev Team</h1><br></br>
                       <div class="tab-titles">
                           <p class="tab-links active-link" onclick="opentab('skills')">Moazam Hussain</p>
                           <p class="tab-links" onclick="opentab('experience')">Ummrin Myesha</p>
@@ -68,9 +69,11 @@
       </div>
 
     <!-- Integrated How It Works Section -->
+     
     <div id="services">
       <div class="container">
-          <h1 class="sub-title">How It Works</h1>
+        <div class="section-divider"></div>
+        <br></br><h1 class="sub-title">How It Works</h1><br></br>
           <div class="services-list">
               <div>
                   <i class="fa-solid fa-clipboard-list"></i>
@@ -98,16 +101,26 @@
         
     <div id="portfolio">
         <div class="container">
-          <h1 class="sub-title">Our Services</h1>
+          <div class="section-divider"></div>
+          <br></br><h1 class="sub-title">Our Services</h1><br></br>
           <div class="work-list">
-            <div class="work">
+            <!-- Survey Card with Gradient Hover Effect -->
+          <div class="work">
+            <div class="severity-container survey-card">
+          <h3>Want a More Accurate Prediction?</h3>
+          <p>Click below to fill out the full health survey.</p>
+          <a href="survey.html" class="btn" style="margin-top: 20px;">Take Full Survey</a>
+            </div>
+          </div>
+
+            <!-- <div class="work">
               <img src="images/Car.png">
               <div class="layer">
                 <h3>Diabetes Prediction</h3>
                 <p></p>
                 <a href="#"><i class="fa-solid fa-car" style="color: #2ea126;"></i></a> 
               </div>
-            </div>
+            </div> -->
 
             <div class="work"> 
               <div class="severity-container">
@@ -128,7 +141,15 @@
                 </div>
               </div>
             </div>
-            
+ 
+            <!-- <div class="work">
+              <div class="severity-container" style="padding: 20px;">
+                <h3>Want a More Accurate Prediction?</h3>
+                <p>Click below to fill out the full health survey.</p>
+                <a href="survey.html" class="btn" style="margin-top: 20px;">Take Full Survey</a>
+              </div>
+            </div> -->
+
             
               <div class="work">
                 <img src="images/Stocks1.jpg">
@@ -145,6 +166,8 @@
         <div class="container">
           <div class="row">
             <div class="contact-left">
+              <div class="section-divider"></div>
+              <br></br>
               <h1 class="sub-title">Contact Me</h1>
               <p>
                 <i class="fa-solid fa-paper-plane"></i>abc123@gmail.com
@@ -162,6 +185,7 @@
             </div>
             <div class="contact-right">
               <form name="submit-to-google-sheet">
+                <br></br><br></br><br></br>
                 <input type="text" name="Name" placeholder="Your Name" required />
                 <input
                   type="email"

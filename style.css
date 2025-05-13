@@ -29,9 +29,11 @@ body {
     opacity: 0.7;
 }
 .container {
-    padding: 0 10%;
-    position: relative;
-    z-index: 1;
+  padding: 0 10%;
+  position: relative;
+  z-index: 1;
+  max-width: 4000px; /* Add this */
+  /* margin: 0 auto;     Center it */
 }
 nav {
     display: flex;
@@ -164,6 +166,16 @@ nav ul li a:hover::after {
   max-width: 4000px;
   height: 500px;
 }
+.section-divider {
+  margin-top: 100px;
+  margin-bottom: 40px;
+  border-top: 2px solid #19ad39;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.4;
+}
+
 
 /* ----------about------------ */
 #about {
@@ -357,7 +369,16 @@ nav ul li a:hover::after {
   .btn:hover {
     background: #19ad39;
   }
-  
+  /* Survey card hover like severity scale */
+.severity-container.survey-card:hover {
+  background: linear-gradient(to right, #19ad39, #c6db0a, #c06504, #db0e0a); /* blue to purple gradient */
+  transform: translateY(-10px);
+}
+
+.severity-container.survey-card:hover h3,
+.severity-container.survey-card:hover p {
+  color: #fff;
+}
  /* ---------- Severity Scale ---------- */
 /* ---------- Severity Scale Styles ---------- */
 .severity-container {
@@ -541,6 +562,21 @@ nav ul li a:hover::after {
   .copyright i {
     color: #19ad39;
   }
+  #contact .row {
+  align-items: center; /* ensures both sides align vertically */
+}
+
+.contact-left,
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-right form {
+  margin-top: 20px;
+}
+
+
   /*------------------- css for small screen ----------*/
   nav .fas {
     display: none;
