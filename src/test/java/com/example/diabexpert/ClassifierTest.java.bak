@@ -1,0 +1,39 @@
+package com.example.diabexpert;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.*;
+
+public class ClassifierTest {
+
+    @Test
+    public void testBootstrapSampleSize() {
+        List<UserData> data = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            data.add(new UserData(new double[]{i}, i % 2));
+        }
+        RandomForestClassifier rf = new RandomForestClassifier(1, 50);
+        List<UserData> sample = rf.bootstrapSample(data);
+        assertEquals(50, sample.size());
+    }
+
+    @Test
+    public void testDeterministicPrediction() {
+        DecisionTree tree = new DecisionTree();
+        List<UserData> data = List.of(
+            new UserData(new double[]{100}, 1),
+            new UserData(new double[]{80}, 0)
+        );
+        tree.train(data);
+        assertEquals(1, tree.predict(new double[]{100}));
+    }
+
+    @Test
+    public void testEncryptionModule() throws Exception {
+        String original = "SensitiveUserData";
+        String encrypted = EncryptionModule.encrypt(original);
+        String decrypted = EncryptionModule.decrypt(encrypted);
+        assertEquals(original, decrypted);
+    }
+}

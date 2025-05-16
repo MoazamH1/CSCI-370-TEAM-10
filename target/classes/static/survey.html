@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DiabeXpert Survey</title>
+<link rel="stylesheet" href="style.css" />
+      <script src="https://kit.fontawesome.com/029195c3d8.js" crossorigin="anonymous" ></script>
+      <link rel="icon" href="images/little-shield1.png" type="image/x-icon">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 40px;
+      background: #1c1c1c;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #19ad39;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: #fff;
+    }
+    .submit-btn {
+      background: #19ad39;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .submit-btn:hover {
+      background: #128a2f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Health Survey</h2>
+    <form id="healthForm">
+      <div class="form-group">
+        <label for="gender">Gender <small>(e.g., "Male")</small></label>
+        <select id="gender" required>
+          <option value="">--Select--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age <small>(e.g., 42)</small></label>
+        <input type="number" id="age" min="1" max="120" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hypertension">Hypertension <small>(e.g., "Yes")</small></label>
+        <select id="hypertension" required>
+          <option value="">--Select--</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="heartDisease">Heart Disease <small>(e.g., "No")</small></label>
+        <select id="heartDisease" required>
+          <option value="">--Select--</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="smoking">Smoking Status <small>(e.g., "Former")</small></label>
+        <select id="smoking" required>
+          <option value="">--Select--</option>
+          <option value="never">Never</option>
+          <option value="no info">No Info</option>
+          <option value="current">Current</option>
+          <option value="former">Former</option>
+          <option value="not current">Not Current</option>
+          <option value="ever">Ever</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="bmi">BMI <small>(e.g., 27.3)</small></label>
+        <input type="number" id="bmi" step="0.1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hba1c">HbA1c Level <small>(e.g., 5.7)</small></label>
+        <input type="number" id="hba1c" step="0.1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="glucose">Blood Glucose Level <small>(e.g., 130)</small></label>
+        <input type="number" id="glucose" required />
+      </div>
+
+      <button type="submit" class="submit-btn">Submit & Predict</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("healthForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        gender: document.getElementById("gender").value,
+        age: parseFloat(document.getElementById("age").value),
+        hypertension: parseInt(document.getElementById("hypertension").value),
+        heart_disease: parseInt(document.getElementById("heartDisease").value),
+        smoking: document.getElementById("smoking").value,
+        bmi: parseFloat(document.getElementById("bmi").value),
+        hba1c: parseFloat(document.getElementById("hba1c").value),
+        glucose: parseFloat(document.getElementById("glucose").value),
+      };
+
+      // Send data to backend prediction API
+      fetch("http://localhost:8082/api/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+  alert("Predicted Risk: " + JSON.stringify(result));
+
+  // 💾 Store both survey input and prediction result
+  localStorage.setItem("surveyData", JSON.stringify(data));
+  localStorage.setItem("resultData", JSON.stringify(result));
+
+  // ✅ Redirect to results page
+  window.location.href = "results.html";
+})
+
+        .catch((error) => {
+          console.error("Prediction error:", error);
+          alert("Something went wrong. Please try again.");
+        });
+    });
+  </script>
+  <script src="main.js"></script>
+
+</body>
+</html>
+<!-- http://localhost:8082/index.html#portfolio -->

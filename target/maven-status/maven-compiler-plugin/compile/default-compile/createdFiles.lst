@@ -1,0 +1,8 @@
+com\example\diabexpert\DiabeXpertApplication.class
+com\example\diabexpert\SeverityScale.class
+com\example\diabexpert\EncryptionModule.class
+com\example\diabexpert\UserData.class
+com\example\diabexpert\RecommendationEngine.class
+com\example\diabexpert\DecisionTreeNode.class
+com\example\diabexpert\DecisionTree.class
+com\example\diabexpert\DatasetParser.class
